@@ -20,7 +20,6 @@ package glog
 
 import (
 	"errors"
-	"flag"
 	"fmt"
 	"os"
 	"os/user"
@@ -41,8 +40,8 @@ var logDirs []string
 var logDir = ""
 
 func createLogDirs() {
-	if *logDir != "" {
-		logDirs = append(logDirs, *logDir)
+	if logDir != "" {
+		logDirs = append(logDirs, logDir)
 	}
 	logDirs = append(logDirs, os.TempDir())
 }
