@@ -407,6 +407,8 @@ func init() {
 	logging.stderrThreshold = errorLog
 
 	logging.setVState(0, nil, false)
+
+	initAPM()
 	go logging.flushDaemon()
 }
 
