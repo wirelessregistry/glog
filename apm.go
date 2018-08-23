@@ -380,3 +380,25 @@ func (d *dataCounter) reset() int64 {
 
 	return current
 }
+
+type Trace struct {
+	key   string
+	tags  []string
+	start time.Time
+}
+
+func StartTrace(key string, tags []string) *Trace {
+	return &Trace{
+		key:   key,
+		tags:  tags,
+		start: time.Now(),
+	}
+}
+
+func (t *Trace) Stop() {
+
+	delta := time.Since(t.start).Nanoseconds() / 1000000
+
+	IncTaggedCounter(t.key+"processed", t.tags, 1)
+	IncTaggedCounter(t.key+"processingtime", t.tags, delta)
+}

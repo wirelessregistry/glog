@@ -7,9 +7,15 @@
   revision = "e67964b4021ad3a334e748e8811eb3cd6becbc6e"
   version = "2.1.0"
 
+[[projects]]
+  name = "github.com/google/uuid"
+  packages = ["."]
+  revision = "064e2069ce9c359c118179501254f67d7d37ba24"
+  version = "0.2"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "1babb56853f9aadade0e349c08e458cacf78877d3530e467fde5d6bca0915500"
+  inputs-digest = "0f360a3de322cf65cbd08c4bfec8ce5d29681d8e2f50a775b0171a2d58192080"
   solver-name = "gps-cdcl"
   solver-version = 1
