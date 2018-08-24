@@ -399,6 +399,6 @@ func (t *Trace) Stop() {
 
 	delta := time.Since(t.start).Nanoseconds() / 1000000
 
-	IncTaggedCounter(t.key+"processed", t.tags, 1)
-	IncTaggedCounter(t.key+"processingtime", t.tags, delta)
+	IncTaggedCounter(t.key+".processed", t.tags, 1)
+	IncTaggedCounter(t.key+".processingtime", t.tags, delta)
 }
